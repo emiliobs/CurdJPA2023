@@ -1,9 +1,19 @@
 
 package com.mycompany.peluqueriacaninaapp.Logica;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Mascota
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int numeroCliente;
+    
     private String nombre;
     private String raza;
     private String color;
@@ -11,6 +21,7 @@ public class Mascota
     private String atencionEspecial;
     private String observaciones;
     
+    @OneToOne
     private Duenio unDuenio;
 
     public Mascota()
