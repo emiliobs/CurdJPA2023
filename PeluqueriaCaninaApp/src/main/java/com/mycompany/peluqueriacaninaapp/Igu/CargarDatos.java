@@ -33,26 +33,26 @@ public class CargarDatos extends javax.swing.JFrame
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtClienteNumero = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        txtNombre1 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        txtRaza1 = new javax.swing.JTextField();
+        txtRaza = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        txtColor1 = new javax.swing.JTextField();
+        txtColor = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        txtNombreDueno1 = new javax.swing.JTextField();
+        txtNombreDueno = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        txtCelularDeunio1 = new javax.swing.JTextField();
+        txtCelularDeunio = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        btnLimpiar1 = new javax.swing.JButton();
-        btnGuardar1 = new javax.swing.JButton();
-        cmbAtencioEspecial1 = new javax.swing.JComboBox<>();
+        btnLimpiar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        cmbAtencioEspecial = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
-        cmbAlergenos1 = new javax.swing.JComboBox<>();
+        cmbAlergenos = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        txtObservaciones1 = new javax.swing.JTextArea();
+        txtObservaciones = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
 
@@ -61,24 +61,24 @@ public class CargarDatos extends javax.swing.JFrame
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\JavaPorjects\\CurdJPA2023\\PeluqueriaCaninaApp\\utilidades\\appimg\\datoscanino.jpeg")); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
-        jLabel3.setText("Clinete Numero: ");
+        jLabel3.setText("Cliente Numero: ");
 
-        jTextField2.setName("txtClienteNUmero"); // NOI18N
+        txtClienteNumero.setName("txtClienteNUmero"); // NOI18N
 
         jLabel13.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel13.setText("Nombre:");
 
-        txtNombre1.setName("txtClienteNUmero"); // NOI18N
+        txtNombre.setName("txtClienteNUmero"); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel14.setText("Raza:");
 
-        txtRaza1.setName("txtClienteNUmero"); // NOI18N
+        txtRaza.setName("txtClienteNUmero"); // NOI18N
 
         jLabel15.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel15.setText("Color:");
 
-        txtColor1.setName("txtClienteNUmero"); // NOI18N
+        txtColor.setName("txtClienteNUmero"); // NOI18N
 
         jLabel16.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel16.setText("Atencion Especial:");
@@ -86,34 +86,41 @@ public class CargarDatos extends javax.swing.JFrame
         jLabel17.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel17.setText("Nombre del Dueño:");
 
-        txtNombreDueno1.setName("txtClienteNUmero"); // NOI18N
+        txtNombreDueno.setName("txtClienteNUmero"); // NOI18N
 
         jLabel18.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel18.setText("Celular del Dueño:");
 
-        txtCelularDeunio1.setName("txtClienteNUmero"); // NOI18N
+        txtCelularDeunio.setName("txtClienteNUmero"); // NOI18N
 
         jLabel19.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel19.setText("Observaciones:");
 
-        btnLimpiar1.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
-        btnLimpiar1.setIcon(new javax.swing.ImageIcon("C:\\JavaPorjects\\CurdJPA2023\\PeluqueriaCaninaApp\\utilidades\\appimg\\icons8-escoba-48.png")); // NOI18N
-        btnLimpiar1.setText("Limpiar");
+        btnLimpiar.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        btnLimpiar.setIcon(new javax.swing.ImageIcon("C:\\JavaPorjects\\CurdJPA2023\\PeluqueriaCaninaApp\\utilidades\\appimg\\icons8-escoba-48.png")); // NOI18N
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
-        btnGuardar1.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
-        btnGuardar1.setIcon(new javax.swing.ImageIcon("C:\\JavaPorjects\\CurdJPA2023\\PeluqueriaCaninaApp\\utilidades\\appimg\\icons8-guardar-48.png")); // NOI18N
-        btnGuardar1.setText("Guardar");
+        btnGuardar.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon("C:\\JavaPorjects\\CurdJPA2023\\PeluqueriaCaninaApp\\utilidades\\appimg\\icons8-guardar-48.png")); // NOI18N
+        btnGuardar.setText("Guardar");
 
-        cmbAtencioEspecial1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Si", "No" }));
+        cmbAtencioEspecial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Si", "No" }));
 
         jLabel20.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel20.setText("Alégenos:");
 
-        cmbAlergenos1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", " Si ", "No" }));
+        cmbAlergenos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", " Si ", "No" }));
 
-        txtObservaciones1.setColumns(20);
-        txtObservaciones1.setRows(5);
-        jScrollPane2.setViewportView(txtObservaciones1);
+        txtObservaciones.setColumns(20);
+        txtObservaciones.setRows(5);
+        jScrollPane2.setViewportView(txtObservaciones);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -146,21 +153,21 @@ public class CargarDatos extends javax.swing.JFrame
                         .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombreDueno1)
-                    .addComponent(cmbAtencioEspecial1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbAlergenos1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtColor1)
-                    .addComponent(txtRaza1)
-                    .addComponent(txtNombre1)
-                    .addComponent(jTextField2)
-                    .addComponent(txtCelularDeunio1)
+                    .addComponent(txtNombreDueno)
+                    .addComponent(cmbAtencioEspecial, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbAlergenos, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtColor)
+                    .addComponent(txtRaza)
+                    .addComponent(txtNombre)
+                    .addComponent(txtClienteNumero)
+                    .addComponent(txtCelularDeunio)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))
                 .addContainerGap(36, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnLimpiar1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
         jPanel2Layout.setVerticalGroup(
@@ -169,43 +176,43 @@ public class CargarDatos extends javax.swing.JFrame
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtClienteNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtRaza1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRaza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtColor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbAlergenos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbAlergenos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbAtencioEspecial1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbAtencioEspecial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombreDueno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombreDueno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCelularDeunio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCelularDeunio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLimpiar1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
         );
 
@@ -286,6 +293,21 @@ public class CargarDatos extends javax.swing.JFrame
 //        principal.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnLimpiarActionPerformed
+    {//GEN-HEADEREND:event_btnLimpiarActionPerformed
+       
+        txtClienteNumero.setText("");
+        txtNombre.setText("");
+       txtCelularDeunio.setText("");
+       txtColor.setText("");
+       txtObservaciones.setText("");
+       txtNombreDueno.setText("");
+       txtRaza.setText("");
+       cmbAlergenos.setSelectedIndex(0);
+       cmbAtencioEspecial.setSelectedIndex(0);
+       
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -336,11 +358,11 @@ public class CargarDatos extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGuardar1;
-    private javax.swing.JButton btnLimpiar1;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox<String> cmbAlergenos1;
-    private javax.swing.JComboBox<String> cmbAtencioEspecial1;
+    private javax.swing.JComboBox<String> cmbAlergenos;
+    private javax.swing.JComboBox<String> cmbAtencioEspecial;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -355,12 +377,12 @@ public class CargarDatos extends javax.swing.JFrame
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField txtCelularDeunio1;
-    private javax.swing.JTextField txtColor1;
-    private javax.swing.JTextField txtNombre1;
-    private javax.swing.JTextField txtNombreDueno1;
-    private javax.swing.JTextArea txtObservaciones1;
-    private javax.swing.JTextField txtRaza1;
+    private javax.swing.JTextField txtCelularDeunio;
+    private javax.swing.JTextField txtClienteNumero;
+    private javax.swing.JTextField txtColor;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtNombreDueno;
+    private javax.swing.JTextArea txtObservaciones;
+    private javax.swing.JTextField txtRaza;
     // End of variables declaration//GEN-END:variables
 }

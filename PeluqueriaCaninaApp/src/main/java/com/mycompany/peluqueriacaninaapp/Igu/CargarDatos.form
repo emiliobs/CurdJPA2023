@@ -132,23 +132,23 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtNombreDueno1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="cmbAtencioEspecial1" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
-                          <Component id="cmbAlergenos1" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
-                          <Component id="txtColor1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtRaza1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtNombre1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtCelularDeunio1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtNombreDueno" alignment="0" max="32767" attributes="0"/>
+                          <Component id="cmbAtencioEspecial" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="cmbAlergenos" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                          <Component id="txtColor" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtRaza" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtClienteNumero" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtCelularDeunio" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane2" alignment="0" pref="266" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="36" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnLimpiar1" min="-2" pref="191" max="-2" attributes="0"/>
+                      <Component id="btnLimpiar" min="-2" pref="191" max="-2" attributes="0"/>
                       <EmptySpace pref="96" max="32767" attributes="0"/>
-                      <Component id="btnGuardar1" min="-2" pref="191" max="-2" attributes="0"/>
+                      <Component id="btnGuardar" min="-2" pref="191" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -159,42 +159,42 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtClienteNumero" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel13" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="txtNombre1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel14" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="txtRaza1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtRaza" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel15" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="txtColor1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtColor" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cmbAlergenos1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmbAlergenos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel20" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel16" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="cmbAtencioEspecial1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmbAtencioEspecial" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel17" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="txtNombreDueno1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNombreDueno" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel18" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="txtCelularDeunio1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCelularDeunio" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -203,8 +203,8 @@
                       </Group>
                       <EmptySpace pref="28" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnLimpiar1" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
-                          <Component id="btnGuardar1" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
+                          <Component id="btnLimpiar" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
+                          <Component id="btnGuardar" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   </Group>
@@ -217,10 +217,10 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="18" style="3"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Clinete Numero: "/>
+                <Property name="text" type="java.lang.String" value="Cliente Numero: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
+            <Component class="javax.swing.JTextField" name="txtClienteNumero">
               <Properties>
                 <Property name="name" type="java.lang.String" value="txtClienteNUmero" noResource="true"/>
               </Properties>
@@ -233,7 +233,7 @@
                 <Property name="text" type="java.lang.String" value="Nombre:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNombre1">
+            <Component class="javax.swing.JTextField" name="txtNombre">
               <Properties>
                 <Property name="name" type="java.lang.String" value="txtClienteNUmero" noResource="true"/>
               </Properties>
@@ -246,7 +246,7 @@
                 <Property name="text" type="java.lang.String" value="Raza:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtRaza1">
+            <Component class="javax.swing.JTextField" name="txtRaza">
               <Properties>
                 <Property name="name" type="java.lang.String" value="txtClienteNUmero" noResource="true"/>
               </Properties>
@@ -259,7 +259,7 @@
                 <Property name="text" type="java.lang.String" value="Color:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtColor1">
+            <Component class="javax.swing.JTextField" name="txtColor">
               <Properties>
                 <Property name="name" type="java.lang.String" value="txtClienteNUmero" noResource="true"/>
               </Properties>
@@ -280,7 +280,7 @@
                 <Property name="text" type="java.lang.String" value="Nombre del Due&#xf1;o:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNombreDueno1">
+            <Component class="javax.swing.JTextField" name="txtNombreDueno">
               <Properties>
                 <Property name="name" type="java.lang.String" value="txtClienteNUmero" noResource="true"/>
               </Properties>
@@ -293,7 +293,7 @@
                 <Property name="text" type="java.lang.String" value="Celular del Due&#xf1;o:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtCelularDeunio1">
+            <Component class="javax.swing.JTextField" name="txtCelularDeunio">
               <Properties>
                 <Property name="name" type="java.lang.String" value="txtClienteNUmero" noResource="true"/>
               </Properties>
@@ -306,7 +306,7 @@
                 <Property name="text" type="java.lang.String" value="Observaciones:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnLimpiar1">
+            <Component class="javax.swing.JButton" name="btnLimpiar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="18" style="3"/>
@@ -316,8 +316,11 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnGuardar1">
+            <Component class="javax.swing.JButton" name="btnGuardar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="18" style="3"/>
@@ -328,7 +331,7 @@
                 <Property name="text" type="java.lang.String" value="Guardar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cmbAtencioEspecial1">
+            <Component class="javax.swing.JComboBox" name="cmbAtencioEspecial">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -350,7 +353,7 @@
                 <Property name="text" type="java.lang.String" value="Al&#xe9;genos:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cmbAlergenos1">
+            <Component class="javax.swing.JComboBox" name="cmbAlergenos">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -371,7 +374,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="txtObservaciones1">
+                <Component class="javax.swing.JTextArea" name="txtObservaciones">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
