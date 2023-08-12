@@ -1,4 +1,4 @@
-# Curd JPA 2023
+# Curd JPA 2023 - JAVA
 
 # Formulario Principal
 <img width="1279" alt="image" src="https://github.com/emiliobs/CurdJPA2023/assets/3122465/2b6df2af-1b47-42b6-9773-4c9cbd5d23b9">
