@@ -1,13 +1,19 @@
 
 package com.mycompany.peluqueriacaninaapp.Igu;
 
+import com.mycompany.peluqueriacaninaapp.Logica.Controladora;
+import com.mycompany.peluqueriacaninaapp.Logica.Mascota;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 public class VerDatos extends javax.swing.JFrame
 {
-
+    Controladora controladora; 
  
     public VerDatos()
     {
         initComponents();
+        controladora = new Controladora();
     }
 
   
@@ -27,6 +33,13 @@ public class VerDatos extends javax.swing.JFrame
         btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter()
+        {
+            public void windowOpened(java.awt.event.WindowEvent evt)
+            {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 3, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 51, 0));
@@ -63,6 +76,13 @@ public class VerDatos extends javax.swing.JFrame
         btnSalir.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JavaPorjects\\CurdJPA2023\\PeluqueriaCaninaApp\\utilidades\\appimg\\icons8-salir-48.png")); // NOI18N
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -106,12 +126,13 @@ public class VerDatos extends javax.swing.JFrame
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(314, 314, 314))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(jLabel1)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -140,6 +161,16 @@ public class VerDatos extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSalirActionPerformed
+    {//GEN-HEADEREND:event_btnSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt)//GEN-FIRST:event_formWindowOpened
+    {//GEN-HEADEREND:event_formWindowOpened
+        CargarTabla();
+    }//GEN-LAST:event_formWindowOpened
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -153,4 +184,49 @@ public class VerDatos extends javax.swing.JFrame
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    private void CargarTabla()
+    {
+        //Definir el Modelo que tenga la Tabla:
+        DefaultTableModel tabla = new DefaultTableModel()
+        {
+            //Que las filas y las columnas sean fijas no editables.
+            public  boolean IsCellEditable(int row, int column)
+            {
+                return false;
+            }
+        };
+            
+//public Mascota(int numeroCliente, String nombre, String raza, String color, String alergico, String atencionEspecial, String observaciones, Duenio unDuenio)
+
+            
+        //Establecemos los nombres de la columnas:
+        String titulos[] = {"Num. Cliente", "Nombre", "Raza", "Color", "Alegico", "At. Especial", "Dueño","Celular", "Observaciones"};
+        tabla.setColumnIdentifiers(titulos);
+        
+        //Cargar los datos de la Base de datos:
+        List <Mascota> listaMscotas =  controladora.TarerMascotas();
+        
+        //Recorrer la lsita y mostrar cada elemento de los elementos en la lista:
+        if (listaMscotas != null)
+        {
+            for (Mascota mascotas : listaMscotas)
+            {
+                Object[] objecto = 
+                {
+                    mascotas.getNumeroCliente(),
+                    mascotas.getNombre(),
+                    mascotas.getRaza(),
+                    mascotas.getColor(),
+                    mascotas.getAlergico(),
+                    mascotas.getAtencionEspecial(),
+                    mascotas.getUnDuenio().getNombre(),
+                    mascotas.getUnDuenio().getCelularDelDuenio(),
+                    mascotas.getObservaciones()
+                };
+                
+                tabla.addRow(objecto);
+            }
+        }
+    }
 }
