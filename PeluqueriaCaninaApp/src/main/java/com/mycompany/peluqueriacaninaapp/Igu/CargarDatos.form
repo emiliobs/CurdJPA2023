@@ -137,7 +137,7 @@
                           <Component id="cmbAlergenos" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
                           <Component id="txtColor" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtRaza" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtNombreMascota" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtClienteNumero" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtCelularDeunio" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane2" alignment="0" pref="266" max="32767" attributes="0"/>
@@ -164,7 +164,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel13" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNombreMascota" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -222,6 +222,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtClienteNumero">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="name" type="java.lang.String" value="txtClienteNUmero" noResource="true"/>
               </Properties>
             </Component>
@@ -230,10 +231,10 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="18" style="3"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Nombre:"/>
+                <Property name="text" type="java.lang.String" value="NombreMascota:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNombre">
+            <Component class="javax.swing.JTextField" name="txtNombreMascota">
               <Properties>
                 <Property name="name" type="java.lang.String" value="txtClienteNUmero" noResource="true"/>
               </Properties>
@@ -330,6 +331,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Guardar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="cmbAtencioEspecial">
               <Properties>
