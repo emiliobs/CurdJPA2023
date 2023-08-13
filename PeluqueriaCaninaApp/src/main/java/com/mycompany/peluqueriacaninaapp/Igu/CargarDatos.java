@@ -120,7 +120,7 @@ public class CargarDatos extends javax.swing.JFrame
         jLabel20.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel20.setText("Alégenos:");
 
-        cmbAlergenos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", " Si ", "No" }));
+        cmbAlergenos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Si ", "No" }));
 
         txtObservaciones.setColumns(20);
         txtObservaciones.setRows(5);
