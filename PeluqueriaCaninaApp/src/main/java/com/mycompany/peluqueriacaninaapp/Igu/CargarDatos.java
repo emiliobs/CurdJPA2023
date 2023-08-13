@@ -63,7 +63,7 @@ public class CargarDatos extends javax.swing.JFrame
         txtClienteNumero.setName("txtClienteNUmero"); // NOI18N
 
         jLabel13.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
-        jLabel13.setText("NombreMascota:");
+        jLabel13.setText("Nombre Mascota:");
 
         txtNombreMascota.setName("txtClienteNUmero"); // NOI18N
 

@@ -1,4 +1,3 @@
-
 package com.mycompany.peluqueriacaninaapp.Igu;
 
 import com.mycompany.peluqueriacaninaapp.Logica.Controladora;
@@ -8,15 +7,19 @@ import javax.swing.table.DefaultTableModel;
 
 public class VerDatos extends javax.swing.JFrame
 {
-    Controladora controladora; 
- 
+
+    Controladora controladora = null;
+
     public VerDatos()
     {
+       
         initComponents();
-        controladora = new Controladora();
+        
+         controladora = new Controladora();
+        
+        
     }
 
-  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents()
@@ -26,7 +29,7 @@ public class VerDatos extends javax.swing.JFrame
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblVerDatos = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         btbEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -47,7 +50,7 @@ public class VerDatos extends javax.swing.JFrame
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblVerDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {},
@@ -60,7 +63,7 @@ public class VerDatos extends javax.swing.JFrame
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblVerDatos);
 
         jLabel2.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel2.setText("Datos de Mascotas:");
@@ -95,8 +98,8 @@ public class VerDatos extends javax.swing.JFrame
                         .addComponent(jLabel2)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 868, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btbEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
@@ -126,14 +129,13 @@ public class VerDatos extends javax.swing.JFrame
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(236, 236, 236)
-                        .addComponent(jLabel1)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(75, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(340, 340, 340))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,7 +173,6 @@ public class VerDatos extends javax.swing.JFrame
         CargarTabla();
     }//GEN-LAST:event_formWindowOpened
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btbEliminar;
@@ -182,51 +183,74 @@ public class VerDatos extends javax.swing.JFrame
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblVerDatos;
     // End of variables declaration//GEN-END:variables
 
     private void CargarTabla()
     {
-        //Definir el Modelo que tenga la Tabla:
-        DefaultTableModel tabla = new DefaultTableModel()
+        try
         {
-            //Que las filas y las columnas sean fijas no editables.
-            public  boolean IsCellEditable(int row, int column)
+            //Definir el Modelo que tenga la Tabla:
+            DefaultTableModel defaultTableModel = new DefaultTableModel()
             {
-                return false;
-            }
-        };
-            
-//public Mascota(int numeroCliente, String nombre, String raza, String color, String alergico, String atencionEspecial, String observaciones, Duenio unDuenio)
-
-            
-        //Establecemos los nombres de la columnas:
-        String titulos[] = {"Num. Cliente", "Nombre", "Raza", "Color", "Alegico", "At. Especial", "Dueño","Celular", "Observaciones"};
-        tabla.setColumnIdentifiers(titulos);
-        
-        //Cargar los datos de la Base de datos:
-        List <Mascota> listaMscotas =  controladora.TarerMascotas();
-        
-        //Recorrer la lsita y mostrar cada elemento de los elementos en la lista:
-        if (listaMscotas != null)
-        {
-            for (Mascota mascotas : listaMscotas)
-            {
-                Object[] objecto = 
+                //Que las filas y las columnas sean fijas no editables.
+               
+                @Override
+                public boolean isCellEditable(int row, int column)
                 {
-                    mascotas.getNumeroCliente(),
-                    mascotas.getNombre(),
-                    mascotas.getRaza(),
-                    mascotas.getColor(),
-                    mascotas.getAlergico(),
-                    mascotas.getAtencionEspecial(),
-                    mascotas.getUnDuenio().getNombre(),
-                    mascotas.getUnDuenio().getCelularDelDuenio(),
-                    mascotas.getObservaciones()
-                };
-                
-                tabla.addRow(objecto);
+                    return false;
+                }
+            };
+
+            //Establecemos los nombres de la columnas:
+            String titulos[] =
+            {
+                "Num. Cliente",
+                "Nombre",
+                "Raza",
+                "Color",
+                "Alegico",
+                "At. Especial",
+                "Dueño",
+                "Celular",
+                "Observaciones"
+            };
+
+            defaultTableModel.setColumnIdentifiers(titulos);
+
+            //Cargar los datos de la Base de datos:
+            List<Mascota> listaMascotas = controladora.TraerMascotas();
+
+            //Recorrer la lsita y mostrar cada elemento de los elementos en la lista:
+            if (listaMascotas != null)
+            {
+                for (Mascota mascotas : listaMascotas)
+                {
+                    Object[] objecto =
+                    {
+                        mascotas.getNumeroCliente(),
+                        mascotas.getNombre(),
+                        mascotas.getRaza(),
+                        mascotas.getColor(),
+                        mascotas.getAlergico(),
+                        mascotas.getAtencionEspecial(),
+                        mascotas.getUnDuenio().getNombre(),
+                        mascotas.getUnDuenio().getCelularDelDuenio(),
+                        mascotas.getObservaciones()
+                    };
+
+                    defaultTableModel.addRow(objecto);
+                }
             }
+            
+            tblVerDatos.setModel(defaultTableModel);
+            
+            //System.out.println("Datos Mostrados");
         }
+        catch (Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+
     }
 }

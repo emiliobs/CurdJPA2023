@@ -4,7 +4,6 @@ package com.mycompany.peluqueriacaninaapp.Igu;
 
 public class Principal extends javax.swing.JFrame
 {
-
  
     public Principal()
     {
@@ -57,6 +56,13 @@ public class Principal extends javax.swing.JFrame
         btbVerDatos.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         btbVerDatos.setIcon(new javax.swing.ImageIcon("C:\\JavaPorjects\\CurdJPA2023\\PeluqueriaCaninaApp\\utilidades\\appimg\\icons8-ver-48.png")); // NOI18N
         btbVerDatos.setText("Ver Datos");
+        btbVerDatos.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btbVerDatosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -123,6 +129,13 @@ public class Principal extends javax.swing.JFrame
     {//GEN-HEADEREND:event_btnSalirActionPerformed
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btbVerDatosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btbVerDatosActionPerformed
+    {//GEN-HEADEREND:event_btbVerDatosActionPerformed
+       VerDatos verDatos = new VerDatos();
+       verDatos.setVisible(true);
+       verDatos.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btbVerDatosActionPerformed
 
     
   
