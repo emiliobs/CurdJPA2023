@@ -44,4 +44,9 @@ public class Controladora
         controladoraPersistencia.BorrarMascotaPorId(numeroCliente);
     }
 
+    public Mascota TraerMascotaPorId(int numCliente)
+    {
+        return  controladoraPersistencia.TraerMascotaPorId(numCliente);
+    }
+
 }
