@@ -83,6 +83,13 @@ public class VerDatos extends javax.swing.JFrame
         btnEditar.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         btnEditar.setIcon(new javax.swing.ImageIcon("C:\\JavaPorjects\\CurdJPA2023\\PeluqueriaCaninaApp\\utilidades\\appimg\\icons8-editar-48.png")); // NOI18N
         btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         btnSalir.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         btnSalir.setIcon(new javax.swing.ImageIcon("C:\\JavaPorjects\\CurdJPA2023\\PeluqueriaCaninaApp\\utilidades\\appimg\\icons8-salir-48.png")); // NOI18N
@@ -219,6 +226,39 @@ public class VerDatos extends javax.swing.JFrame
 
     }//GEN-LAST:event_btbEliminarActionPerformed
 
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnEditarActionPerformed
+    {//GEN-HEADEREND:event_btnEditarActionPerformed
+        try
+        {
+            if (tblVerDatos.getRowCount() > 0)
+            {
+                if (tblVerDatos.getSelectedRow() != -1)
+                {
+                   int numCliente = Integer.parseInt(String.valueOf(tblVerDatos.getValueAt(tblVerDatos.getSelectedRow(),0)));
+                   
+                   ModificarDatos modificarDatos = new ModificarDatos(numCliente);
+                   modificarDatos.setVisible(true);
+                   modificarDatos.setLocationRelativeTo(null);
+                           
+                }
+                else
+                {
+                    MostrarMensajes("No ha seleccionado dato a Editar", "Error", "Error: Dato no seleccionado");
+                }
+            }
+            else
+            {
+                MostrarMensajes("NO existe Datos a Editar", "Error", "Error: Tabla sin Datos");
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println("ERROR: (Editar en Ver Datos.)" + e.getMessage());
+        }
+
+
+    }//GEN-LAST:event_btnEditarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btbEliminar;
@@ -242,7 +282,7 @@ public class VerDatos extends javax.swing.JFrame
         }
         else if (tipo.equals("Error"))
         {
-           
+
             optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
         }
 
@@ -250,7 +290,6 @@ public class VerDatos extends javax.swing.JFrame
         dialog.setAlwaysOnTop(true);
         dialog.setVisible(true);
 
-        
     }
 
     private void CargarTabla()
