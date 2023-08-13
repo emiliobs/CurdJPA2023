@@ -196,6 +196,7 @@ public class VerDatos extends javax.swing.JFrame
 
                     //Mesaje al usuario del borrado
                     MostrarMensajes("Mascota eliminado de forma correcta", "Informacion", "Borrando Dato");
+                    CargarTabla();
 
                 }
                 else
@@ -249,7 +250,7 @@ public class VerDatos extends javax.swing.JFrame
         dialog.setAlwaysOnTop(true);
         dialog.setVisible(true);
 
-        CargarTabla();
+        
     }
 
     private void CargarTabla()
