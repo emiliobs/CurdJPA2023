@@ -3,6 +3,8 @@ package com.mycompany.peluqueriacaninaapp.Igu;
 import com.mycompany.peluqueriacaninaapp.Logica.Controladora;
 import com.mycompany.peluqueriacaninaapp.Logica.Mascota;
 import java.util.List;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class VerDatos extends javax.swing.JFrame
@@ -12,12 +14,11 @@ public class VerDatos extends javax.swing.JFrame
 
     public VerDatos()
     {
-       
+
         initComponents();
-        
-         controladora = new Controladora();
-        
-        
+
+        controladora = new Controladora();
+
     }
 
     @SuppressWarnings("unchecked")
@@ -71,6 +72,13 @@ public class VerDatos extends javax.swing.JFrame
         btbEliminar.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         btbEliminar.setIcon(new javax.swing.ImageIcon("C:\\JavaPorjects\\CurdJPA2023\\PeluqueriaCaninaApp\\utilidades\\appimg\\icons8-basura-llena-48.png")); // NOI18N
         btbEliminar.setText("Eliminar");
+        btbEliminar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btbEliminarActionPerformed(evt);
+            }
+        });
 
         btnEditar.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         btnEditar.setIcon(new javax.swing.ImageIcon("C:\\JavaPorjects\\CurdJPA2023\\PeluqueriaCaninaApp\\utilidades\\appimg\\icons8-editar-48.png")); // NOI18N
@@ -173,6 +181,43 @@ public class VerDatos extends javax.swing.JFrame
         CargarTabla();
     }//GEN-LAST:event_formWindowOpened
 
+    private void btbEliminarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btbEliminarActionPerformed
+    {//GEN-HEADEREND:event_btbEliminarActionPerformed
+        try
+        {
+            //Controlo que la tabla no este vacia
+            if (tblVerDatos.getRowCount() > 0)
+            {
+                //Controlo que se haya seleccionado un datos:
+                if (tblVerDatos.getSelectedRow() != -1)
+                {
+                    //Aqui obtengo la ID del dato a eliminas
+                    controladora.BorrarMascotaPorId(Integer.parseInt(String.valueOf(tblVerDatos.getValueAt(tblVerDatos.getSelectedRow(), 0))));
+
+                    //Mesaje al usuario del borrado
+                    MostrarMensajes("Mascota eliminado de forma correcta", "Informacion", "Borrando Dato");
+
+                }
+                else
+                {
+                    MostrarMensajes("No ha seleccionodo dato a Eliminar", "Error", "Error: Dato no Seleccionado");
+
+                }
+
+            }
+            else
+            {
+                MostrarMensajes("No existe Dato a Eliminar", "Error", "Error: Tabla sin Dato");
+            }
+
+        }
+        catch (NumberFormatException e)
+        {
+            System.out.println("ERROR (Eliminar en Ver Datos): " + e.getMessage());
+        }
+
+    }//GEN-LAST:event_btbEliminarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btbEliminar;
@@ -186,6 +231,27 @@ public class VerDatos extends javax.swing.JFrame
     private javax.swing.JTable tblVerDatos;
     // End of variables declaration//GEN-END:variables
 
+    public void MostrarMensajes(String mensaje, String tipo, String titulo)
+    {
+        JOptionPane optionPane = new JOptionPane(mensaje);
+        if (tipo.equals("Informacion"))
+        {
+            optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+
+        }
+        else if (tipo.equals("Error"))
+        {
+           
+            optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
+        }
+
+        JDialog dialog = optionPane.createDialog(titulo);
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
+
+        CargarTabla();
+    }
+
     private void CargarTabla()
     {
         try
@@ -194,7 +260,7 @@ public class VerDatos extends javax.swing.JFrame
             DefaultTableModel defaultTableModel = new DefaultTableModel()
             {
                 //Que las filas y las columnas sean fijas no editables.
-               
+
                 @Override
                 public boolean isCellEditable(int row, int column)
                 {
@@ -242,9 +308,9 @@ public class VerDatos extends javax.swing.JFrame
                     defaultTableModel.addRow(objecto);
                 }
             }
-            
+
             tblVerDatos.setModel(defaultTableModel);
-            
+
             //System.out.println("Datos Mostrados");
         }
         catch (Exception e)
