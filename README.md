@@ -11,3 +11,6 @@
 
 # Crud JPA 2023 - JAVA Formulario Elimiar Datos 
 <img width="1269" alt="image" src="https://github.com/emiliobs/CurdJPA2023/assets/3122465/dc16f2ba-836c-4850-898b-fa7ef7113da9">
+
+# Crud JPA 2023 - JAVA Formulario Editar Datos 
+<img width="1280" alt="image" src="https://github.com/emiliobs/CurdJPA2023/assets/3122465/dc060200-dd42-4023-bf74-59c1bdf11a0e">
