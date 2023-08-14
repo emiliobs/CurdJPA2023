@@ -3,6 +3,7 @@ package com.mycompany.peluqueriacaninaapp.Igu;
 import com.mycompany.peluqueriacaninaapp.Logica.Controladora;
 import com.mycompany.peluqueriacaninaapp.Logica.Mascota;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -200,10 +201,22 @@ public class VerDatos extends javax.swing.JFrame
                 if (tblVerDatos.getSelectedRow() != -1)
                 {
                     //Aqui obtengo la ID del dato a eliminas
-                    controladora.BorrarMascotaPorId(Integer.parseInt(String.valueOf(tblVerDatos.getValueAt(tblVerDatos.getSelectedRow(), 0))));
-
-                    //Mesaje al usuario del borrado
-                    MostrarMensajes("Mascota eliminado de forma correcta", "Informacion", "Borrando Dato");
+                    ImageIcon icon = new ImageIcon("C:/JavaPorjects/CurdJPA2023/PeluqueriaCaninaApp/utilidades/appimg/trashcan.png");
+                    int salida = JOptionPane.showConfirmDialog(null,"Desea Mascota Mascota?", "Borrar Mascota",JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, icon);
+                    if (salida == 0)
+                    {
+                     
+                     controladora.BorrarMascotaPorId(Integer.parseInt(String.valueOf(tblVerDatos.getValueAt(tblVerDatos.getSelectedRow(), 0))));
+                     MostrarMensajes("Mascota eliminado de forma correcta", "Informacion", "Borrando Dato");
+                    }
+                    else
+                    {
+                         CargarTabla();
+                    }
+                            
+                                     
+        
+                   // MostrarMensajes("Mascota eliminado de forma correcta", "Informacion", "Borrando Dato");
                     CargarTabla();
 
                 }
@@ -241,7 +254,8 @@ public class VerDatos extends javax.swing.JFrame
                    modificarDatos.setVisible(true);
                    modificarDatos.setLocationRelativeTo(null);
                    
-                      dispose();                        
+                     dispose();
+                                             
                 }
                 else
                 {
@@ -253,7 +267,7 @@ public class VerDatos extends javax.swing.JFrame
                 MostrarMensajes("NO existe Datos a Editar", "Error", "Error: Tabla sin Datos");
             }
             
-           
+          
         }
         catch (Exception e)
         {

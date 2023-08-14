@@ -3,6 +3,7 @@ package com.mycompany.peluqueriacaninaapp.Igu;
 import com.mycompany.peluqueriacaninaapp.Logica.Controladora;
 import com.mycompany.peluqueriacaninaapp.Logica.Mascota;
 import com.mycompany.peluqueriacaninaapp.Logica.Mascota_;
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.OptionPaneUI;
@@ -334,13 +335,21 @@ public class ModificarDatos extends javax.swing.JFrame
                     txtNombreDueno.getText()
             );
             
-              MostrarMensajes("Edición Realizadan", "Informacion", "Edición Exitosa");
+             ImageIcon icon = new ImageIcon("C:/JavaPorjects/CurdJPA2023/PeluqueriaCaninaApp/utilidades/appimg/icons8-editar-48.png");
+             int respuesta = JOptionPane.showConfirmDialog(null, "Desea Editar La Mascota", "Editando Mascota",JOptionPane.YES_NO_OPTION , JOptionPane.WARNING_MESSAGE, icon);
+            
+             if (respuesta == 0)
+            {
+                MostrarMensajes("Edición Realizadan", "Informacion", "Edición Exitosa");
              
                   VerDatos verDatos = new VerDatos();
                   verDatos.setVisible(true);
                   verDatos.setLocationRelativeTo(null);
                   
                   dispose();
+            }
+             
+              
 
 
         }
