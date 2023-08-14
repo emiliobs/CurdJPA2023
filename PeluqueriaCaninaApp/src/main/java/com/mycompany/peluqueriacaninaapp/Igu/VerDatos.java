@@ -18,6 +18,7 @@ public class VerDatos extends javax.swing.JFrame
         initComponents();
 
         controladora = new Controladora();
+        CargarTabla();
 
     }
 
@@ -150,7 +151,7 @@ public class VerDatos extends javax.swing.JFrame
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(340, 340, 340))
+                .addGap(357, 357, 357))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,7 +240,8 @@ public class VerDatos extends javax.swing.JFrame
                    ModificarDatos modificarDatos = new ModificarDatos(numCliente);
                    modificarDatos.setVisible(true);
                    modificarDatos.setLocationRelativeTo(null);
-                           
+                   
+                      dispose();                        
                 }
                 else
                 {
@@ -250,6 +252,8 @@ public class VerDatos extends javax.swing.JFrame
             {
                 MostrarMensajes("NO existe Datos a Editar", "Error", "Error: Tabla sin Datos");
             }
+            
+           
         }
         catch (Exception e)
         {
@@ -292,7 +296,7 @@ public class VerDatos extends javax.swing.JFrame
 
     }
 
-    private void CargarTabla()
+    public void CargarTabla()
     {
         try
         {
