@@ -46,7 +46,44 @@ public class Controladora
 
     public Mascota TraerMascotaPorId(int numCliente)
     {
-        return  controladoraPersistencia.TraerMascotaPorId(numCliente);
+        return controladoraPersistencia.TraerMascotaPorId(numCliente);
+    }
+
+    public void ModificarMascota
+           (
+            Mascota mascota, String NombreMascota, String raza, String color, String observaciones,
+            String alergico, String atencioEspecial, String nombreDuenio, String celularDuenio
+            )
+    {
+        mascota.setNombre(NombreMascota);
+        mascota.setRaza(raza);
+        mascota.setColor(color);
+        mascota.setObservaciones(observaciones);
+        mascota.setAlergico(alergico);
+        mascota.setAtencionEspecial(atencioEspecial);
+        
+        //MOdificar MAscota;
+        controladoraPersistencia.ModificarMascota(mascota);
+        
+        //BUscar  Duenio y setaer valores del duenio;
+        Duenio duenio = this.BuscarDuenioPorId(mascota.getUnDuenio().getIdDuenio());
+        duenio.setCelularDelDuenio(celularDuenio);
+        duenio.setNombre(nombreDuenio);
+        
+        //LLamar al modificar duenio:
+        this.ModificarDuenio(duenio);
+        
+        
+    }
+
+    private Duenio BuscarDuenioPorId(int idDuenio)
+    {
+        return controladoraPersistencia.TraerDuenio(idDuenio);
+    }
+
+    private void ModificarDuenio(Duenio duenio)
+    {
+        controladoraPersistencia.ModificarDuenio(duenio);
     }
 
 }
