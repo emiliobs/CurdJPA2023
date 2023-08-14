@@ -12,7 +12,8 @@ public class ModificarDatos extends javax.swing.JFrame
 
     Controladora controladora = null;
     //int numeroCliente;
-
+    Mascota mascota;
+    
     public ModificarDatos(int numCliente)
     {
 
@@ -56,7 +57,7 @@ public class ModificarDatos extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\JavaPorjects\\CurdJPA2023\\PeluqueriaCaninaApp\\utilidades\\appimg\\datoscanino.jpeg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edit.jpg"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel3.setText("Cliente Numero: ");
@@ -117,12 +118,12 @@ public class ModificarDatos extends javax.swing.JFrame
             }
         });
 
-        cmbAtencioEspecial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Si", "No" }));
+        cmbAtencioEspecial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI", "NO" }));
 
         jLabel20.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel20.setText("Alégenos:");
 
-        cmbAlergenos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Si", "No" }));
+        cmbAlergenos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI", "NO" }));
 
         txtObservaciones.setColumns(20);
         txtObservaciones.setRows(5);
@@ -246,11 +247,12 @@ public class ModificarDatos extends javax.swing.JFrame
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(31, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(85, 85, 85))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -261,15 +263,16 @@ public class ModificarDatos extends javax.swing.JFrame
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))))
+                        .addGap(14, 14, 14))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -318,31 +321,33 @@ public class ModificarDatos extends javax.swing.JFrame
 
         try
         {
-            controladora.Guardar(
+            controladora.ModificarMascota
+            (
+                    mascota,
                     txtNombreMascota.getText(),
                     txtRaza.getText(),
                     txtColor.getText(),
+                    txtObservaciones.getText(),
                     (String) cmbAlergenos.getSelectedItem(),
                     (String) cmbAtencioEspecial.getSelectedItem(),
-                    txtObservaciones.getText(),
                     txtCelularDeunio.getText(),
                     txtNombreDueno.getText()
             );
+            
+              MostrarMensajes("Edición Realizadan", "Informacion", "Edición Exitosa");
+             
+                  VerDatos verDatos = new VerDatos();
+                  verDatos.setVisible(true);
+                  verDatos.setLocationRelativeTo(null);
+                  
+                  dispose();
 
-            JOptionPane jOptionPane = new JOptionPane("Dato guardaddo de forma correcta.");
-            jOptionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
-            JDialog dialog = jOptionPane.createDialog("Guardado Exitosamente.");
-            dialog.setAlwaysOnTop(true);
-            dialog.setVisible(true);
 
         }
         catch (Exception e)
         {
-            JOptionPane jOptionPane = new JOptionPane("Error: " + e.getMessage());
-            jOptionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
-            JDialog dialog = jOptionPane.createDialog("Error del Proceso.");
-            dialog.setAlwaysOnTop(true);
-            dialog.setVisible(true);
+            MostrarMensajes("Error: (Editar Mascota)" + e.getMessage(), "Error", "Error del Proceso Ediatar");
+                      
         }
 
 
@@ -380,46 +385,66 @@ public class ModificarDatos extends javax.swing.JFrame
 
     private void CargarDatos(int numCliente)
     {
-        Mascota mascota = controladora.TraerMascotaPorId(numCliente);
+        this.mascota = controladora.TraerMascotaPorId(numCliente);
 
         txtClienteNumero.setText(String.valueOf(mascota.getNumeroCliente()));
         txtNombreMascota.setText(mascota.getNombre());
         txtRaza.setText(mascota.getRaza());
         txtColor.setText(mascota.getRaza());
 
-        if (mascota.getAlergico().equals("Si"))
+        if (mascota.getAlergico().equals("SI"))
         {
             cmbAlergenos.setSelectedIndex(1);
 
         }
-        else 
+        else
         {
-            if (mascota.getAlergico().equals("No"))
+            if (mascota.getAlergico().equals("NO"))
             {
-                            cmbAlergenos.setSelectedIndex(2);
+                cmbAlergenos.setSelectedIndex(2);
 
             }
         }
-       
 
-        if (mascota.getAtencionEspecial().equals("Si"))
+        if (mascota.getAtencionEspecial().equals("SI"))
         {
             cmbAtencioEspecial.setSelectedIndex(1);
 
         }
-        else 
+        else
         {
-            if(mascota.getAtencionEspecial().equals("No"))
+            if (mascota.getAtencionEspecial().equals("NO"))
             {
-                            cmbAtencioEspecial.setSelectedIndex(2);
+                cmbAtencioEspecial.setSelectedIndex(2);
 
             }
         }
-        
 
         txtNombreDueno.setText(mascota.getUnDuenio().getNombre());
         txtCelularDeunio.setText(mascota.getUnDuenio().getCelularDelDuenio());
         txtObservaciones.setText(mascota.getObservaciones());
 
     }
+    
+    public void MostrarMensajes(String mensaje, String tipo, String titulo)
+    {
+        JOptionPane optionPane = new JOptionPane(mensaje);
+        if (tipo.equals("Informacion"))
+        {
+            optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+
+        }
+        else if (tipo.equals("Error"))
+        {
+
+            optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
+        }
+
+        JDialog dialog = optionPane.createDialog(titulo);
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
+
+    }
+    
+    
 }
