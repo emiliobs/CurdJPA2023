@@ -115,12 +115,12 @@ public class CargarDatos extends javax.swing.JFrame
             }
         });
 
-        cmbAtencioEspecial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Si", "No" }));
+        cmbAtencioEspecial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI", "NO" }));
 
         jLabel20.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel20.setText("Alégenos:");
 
-        cmbAlergenos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Si ", "No" }));
+        cmbAlergenos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI", "NO" }));
 
         txtObservaciones.setColumns(20);
         txtObservaciones.setRows(5);
